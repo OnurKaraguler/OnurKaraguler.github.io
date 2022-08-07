@@ -1,0 +1,658 @@
+@include media-phonehor {
+  .header {
+    // justify-content: flex-end;
+    height: 12vh;
+
+    & .logo {
+
+      & img {
+        height: 9vh;
+      }
+    }
+
+    & .icons {
+      display: inline-block;
+
+      & #menu-btn {
+        margin-right: 2vw;
+      }
+    }
+
+    & .navbar {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background: $gray;
+      width: 25vw;
+      height: 100vh;
+      // height: calc(100vh - 9.5rem);
+
+      // Scrollable Menu
+      white-space: nowrap;
+      overflow: auto;
+
+      &.active {
+        right: 0;
+      }
+
+      & a {
+        color: $black;
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+
+        &:last-child {
+          margin-bottom: 20vw;
+        }
+
+      }
+    }
+  }
+
+  .home {
+
+    & .home__main {
+      & .main-img {
+        height: 88vh;
+        // height: 100%;
+        width: 35%;
+      }
+    }
+  }
+
+  .experience {
+
+    & .box-container {
+      & .box {
+        & .contents {
+          & ul {
+            & h1 {
+              font-size: 2.0vw;
+              padding-bottom: 1.0rem;
+            }
+
+            & p {
+              color: $gray;
+              font-size: 1.1vw;
+              padding: 1vw 0;
+            }
+
+            & li {
+              font-size: 1.1vw;
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact {
+    & .box-container {
+      & h3 {
+        font-size: 2.2vw;
+      }
+
+      & .form_container {
+        // width: 100%;
+
+        & form {
+          & .row {
+            & .inputBox {
+              & span {
+                font-size: 1.5vw;
+              }
+
+              & input {
+                padding: 0.5vw;
+                font-size: 1.5vw;
+
+                &[type="submit"] {
+                  width: 10vw;
+                  height: 4vw;
+                  font-size: 2.0vw;
+                }
+              }
+
+              & textarea {
+                font-size: 1.5vw;
+                min-height: 13vw;
+              }
+            }
+          }
+        }
+      }
+
+      & .info_container {
+        // width: 80%;
+        // margin-top: 4vw;
+
+        & .info {
+          & .info_boxes {
+            & .box {
+              & span {
+                & a {
+                  height: 3.5vw;
+                  width: 3.5vw;
+                  font-size: 1.5vw;
+                }
+              }
+
+              & p {
+                font-size: 1.4vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    & .credit {
+      font-size: 1.2vw;
+    }
+
+    & .links {
+      & a {
+        font-size: 1.5vw;
+      }
+    }
+  }
+}
+
+
+@include media-phonever {
+
+  .header {
+    & .navbar {
+      width: 40vw;
+    }
+  }
+
+  .home {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    & .home__main {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      position: relative;
+
+      & .main-img {
+        height: 70%;
+        width: 100%;
+        margin-right: 0;
+        top: 0;
+        position: absolute;
+        // position: static;
+
+        // & img {}
+      }
+
+      & .content {
+        background-color: $bg;
+        height: 30%;
+        width: 100%;
+        bottom: 0;
+
+        margin-left: 0;
+        position: absolute;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        & .name {
+          & h1 {
+            font-size: 12.0vw;
+            margin-bottom: 5.0vw;
+            color: $white;
+
+            &::after {
+              height: 1.5vw;
+              bottom: -3.0vw;
+            }
+          }
+        }
+
+        & .home__jobs {
+          & .home__job {
+            font-size: 7.3vw;
+          }
+        }
+      }
+    }
+  }
+
+  .about {
+
+    & .section__header {
+      height: 20vw;
+
+      & .heading {
+        font-size: 8vw;
+      }
+    }
+
+    & .box-container {
+      & .box {
+        & .images {
+          width: 90%;
+          height: 50vw;
+        }
+
+        & .content {
+          width: 90%;
+          padding-left: 0vw;
+
+          & h1 {
+            color: $blue;
+            font-size: 5vw;
+            text-indent: 7.0vw;
+          }
+
+          & p {
+            font-size: 4.0vw;
+            // padding-left: 1rem;
+            text-indent: 5vw;
+          }
+        }
+      }
+    }
+  }
+
+  .education {
+
+    & .section__header {
+      height: 16vw;
+
+      & .heading {
+        font-size: 8vw;
+      }
+    }
+
+    & .box-container {
+      flex-direction: column;
+
+      & .box {
+        width: 50vw;
+
+        & .edu-img {
+          height: 18vw;
+
+          & img {
+            height: 14vw;
+
+            &:hover {
+              height: 15vw;
+            }
+          }
+        }
+
+        & .edu-uni {
+          height: 6vw;
+
+          & h1 {
+            font-size: 3.5vw;
+          }
+        }
+
+        & .edu-study {
+          height: 8vw;
+
+          & h2 {
+            font-size: 3.8vw;
+            color: $pink;
+          }
+        }
+
+        & .edu-date {
+          height: 6vw;
+
+          & h3 {
+            font-size: 3.2vw;
+          }
+        }
+
+      }
+    }
+
+
+  }
+
+  .skills {
+
+    & .section__header {
+      height: 16vw;
+
+      & .heading {
+        font-size: 8vw;
+      }
+    }
+
+    & .box-container {
+      flex-direction: column;
+      align-items: center;
+
+      & .box {
+        width: 60vw;
+
+        & .image {
+          height: 30vw;
+        }
+
+        & .content {
+          & h1 {
+            font-size: 4.0vw;
+          }
+
+          & h2 {
+            font-size: 3.5vw;
+          }
+
+          & h3 {
+            font-size: 3.0vw;
+            padding-left: 2vw;
+          }
+
+          & .item {
+            &-lang {
+              & h2 {
+                font-size: 3.0vw;
+              }
+            }
+          }
+
+          & .stars {
+            font-size: 3.0vw;
+          }
+        }
+      }
+    }
+  }
+
+  .experience {
+
+    & .section__header {
+      height: 16vw;
+
+      & .heading {
+        font-size: 8vw;
+      }
+    }
+
+    & .box-container {
+      & .box {
+        & .slider-box {
+          width: 90%;
+          height: 60vw;
+
+          & .slider {
+
+            & .jobs {
+              & .job {
+                height: 6vw;
+                bottom: -6vw;
+
+                & h1 {
+                  font-size: 4.0vw;
+                }
+              }
+
+            }
+
+            & .dates {
+              & .date {
+                & h1 {
+                  font-size: 4.0vw;
+                }
+              }
+            }
+          }
+
+          & .nav {
+            height: 20%;
+
+            & i {
+              font-size: 5.0vw;
+            }
+
+            & .radio-btns {
+              margin: 0 4vw;
+
+              & .btn {
+                width: 2.0vw;
+                height: 2.0vw;
+
+                &:not(:last-child) {
+                  margin-right: 4vw;
+                }
+
+              }
+            }
+          }
+
+        }
+
+        & .contents {
+          width: 90%;
+
+          & ul {
+            & h1 {
+              font-size: 4.0vw;
+              padding-bottom: 1.0rem;
+            }
+
+            & p {
+              color: $gray;
+              font-size: 3.0vw;
+              padding: 1vw 0;
+            }
+
+            & li {
+              font-size: 3.0vw;
+              color: $gray;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio {
+
+    & .section__header {
+      height: 16vw;
+
+      & .heading {
+        font-size: 8vw;
+      }
+    }
+
+    & .box-container {
+      & .filter-menu {
+        & ul {
+          & li {
+            font-size: 2.5vw;
+            padding: 2vw 0;
+          }
+        }
+
+        & .slider-btn {
+          display: none;
+        }
+      }
+
+      & .project-container {
+        & .box {
+          min-width: 35vw;
+          height: 50vw;
+
+          & .card-content {
+            --padding: 1.0vw;
+            height: 34vw;
+            bottom: -28.0vw;
+
+            & .card-title {
+              font-size: 2.5vw;
+
+              &::after {
+                height: 0.4vw;
+                bottom: -0.9vw;
+              }
+            }
+
+            & .card-body {
+              font-size: 2.1vw;
+            }
+
+            & .button {
+              font-size: 2vw;
+              padding: 1.0vw 2.25vw;
+              border-radius: 0.75vw;
+            }
+          }
+        }
+
+        & .music {
+          min-width: 35vw;
+          height: 50vw;
+
+          & .music_card-content {
+            --padding: 1.0vw;
+
+            & .card-title {
+              font-size: 2.5vw;
+
+              &::after {
+                height: 0.4vw;
+                bottom: -0.9vw;
+              }
+            }
+
+            & .card-body {
+              font-size: 2.1vw;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact {
+
+    & .section__header {
+      height: 16vw;
+
+      & .heading {
+        font-size: 8vw;
+      }
+    }
+
+    & .box-container {
+      & h3 {
+        font-size: 4vw;
+      }
+
+      & .form_container {
+        width: 100%;
+
+        & form {
+          & .row {
+            & .inputBox {
+              & span {
+                font-size: 2.5vw;
+              }
+
+              & input {
+                padding: 0.7vw;
+                font-size: 2.3vw;
+
+                &[type="submit"] {
+                  width: 14vw;
+                  height: 5vw;
+                  font-size: 2.5vw;
+                }
+              }
+
+              & textarea {
+                padding: 0.7vw;
+                font-size: 2.5vw;
+                min-height: 15vw;
+              }
+            }
+          }
+        }
+      }
+
+      & .info_container {
+        width: 80%;
+        margin-top: 4vw;
+
+        & .info {
+          & .info_boxes {
+            & .box {
+              & span {
+                & a {
+                  height: 6.5vw;
+                  width: 6.5vw;
+                  font-size: 3.0vw;
+                }
+              }
+
+              & p {
+                font-size: 2.5vw;
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .footer {
+    justify-content: center;
+
+    & .credit {
+      font-size: 2.0vw;
+      font-weight: 500;
+    }
+
+    & .links {
+      display: none;
+    }
+  }
+}
+
+
+// }
+
+
+// }
+// }
+
+@include media-w1000 {
+  .header {
+    padding: 0 3vw;
+  }
+}
+
+// @mixin media-iphone13ver {
+//   @media only screen and (device-width: 390px) and (device-height: 844px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+//     @content
+//   }
+// }
+
+// @mixin media-iphone13hor {
+//   @media only screen and (device-width: 390px) and (device-height: 844px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+//     @content
+//   }
+// }

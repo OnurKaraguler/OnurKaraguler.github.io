@@ -1,0 +1,291 @@
+.portfolio {
+  // background-color: red;
+  width: 90%;
+  padding: 0;
+  margin-top: 3vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .box-container {
+    // background-color: bisque;
+    width: 100%;
+
+    & .filter-menu {
+      // background-color: fuchsia;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & ul {
+        float: left;
+
+        & li {
+          display: inline-block;
+          font-size: 1.2vw;
+          font-weight: 600;
+          padding: 1vw 0;
+          // letter-spacing: .4px;
+          color: $gray;
+          text-transform: uppercase;
+          // margin-bottom: 1vw;
+          cursor: pointer;
+
+          &:not(:last-child) {
+            margin-right: 2vw;
+          }
+
+          &.active {
+            color: $pink;
+          }
+
+          &:hover {
+            color: $pink;
+          }
+        }
+      }
+
+      & .slider-btn {
+        right: 0;
+
+        i {
+          cursor: pointer;
+          font-size: 2.5vw;
+          margin: 1rem;
+          color: $gray;
+
+          &:hover {
+            color: $pink;
+          }
+        }
+
+        // span {
+        //   cursor: pointer;
+        //   font-size: 48px;
+        //   margin: 1rem;
+        //   color: $gray;
+        //   // color: $pink;
+        // }
+      }
+    }
+
+    & .project-container {
+      // background-color: cadetblue;
+      width: 100%;
+      // height: 300px;
+      // margin: auto;
+
+      display: flex;
+      overflow-x: auto;
+      // scroll-behavior: smooth;
+
+      align-items: center;
+      justify-content: flex-start;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      & .box {
+        // background-color: indigo;
+        min-width: 20vw;
+        height: 28vw;
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        display: none;
+        // transition: transform 500ms ease;
+
+        &:not(:last-child) {
+          margin-right: 1vw;
+        }
+
+        & img {
+          // background-color: rgb(196, 199, 16);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: cover;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+
+        &.active {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        & .card-content {
+          position: absolute;
+          --padding: 0.5vw;
+          padding: var(--padding);
+          background-color: $pink;
+          // background: linear-gradient(hsl(0 0% 0% / 0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 1),
+          //   );
+          // transform: translateY(65%);
+          width: 100%;
+          height: 18vw;
+          bottom: -15.0vw; // move down
+
+          & .card-title {
+            // background-color: bisque;
+            position: relative;
+            width: max-content;
+            font-size: 1.5vw;
+            margin-bottom: 1.5vw;
+            color: $gray;
+
+            &::after {
+              content: "";
+              position: absolute;
+              height: 0.2vw;
+              left: calc(var(--padding) * -1);
+              bottom: -0.5vw; // move up
+              width: calc(100% + var(--padding));
+              background: #42F584;
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: transform 500ms ease;
+            }
+          }
+
+          & .card-body {
+            font-size: 1.0vw;
+            color: $gray;
+            word-wrap: break-word;
+            // margin-bottom: 1.5vw;
+          }
+
+          & .button {
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            color: $bg;
+            background-color: #42F584;
+
+            font-size: 1vw;
+            padding: 0.5vw 1.25vw;
+            border-radius: 0.25vw;
+
+            position: absolute;
+            bottom: 1vw;
+            right: 1vw;
+
+            // &:hover,
+            // &:focus {
+            //   font-size: 1.1vw;
+            // }
+          }
+
+          & .button_left {
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            color: $bg;
+            background-color: #42F584;
+
+            font-size: 1vw;
+            padding: 0.5vw 1.25vw;
+            border-radius: 0.25vw;
+
+            position: absolute;
+            bottom: 1vw;
+            left: 1vw;
+
+            &:focus {
+              font-size: 1.1vw;
+            }
+          }
+        }
+
+        &:hover {
+          & .card-content .card-title::after {
+            transform: scaleX(1);
+          }
+
+          & .card-content {
+            bottom: 0;
+            transition-delay: 500ms;
+          }
+        }
+      }
+
+      & .music {
+        min-width: 20vw;
+        height: 28vw;
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        display: none;
+
+        &:not(:last-child) {
+          margin-right: 1vw;
+        }
+
+        & .iframe-container {
+          top: 0;
+          overflow: auto; // for IOS environment
+          // -webkit-overflow-scrolling: touch;
+          width: 100%;
+          height: 80%;
+          border: none;
+          position: absolute;
+
+          & iframe {
+            // position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        & .music_card-content {
+          position: absolute;
+          --padding: 0.5vw;
+          padding: var(--padding);
+          background-color: $pink;
+          width: 100%;
+          height: 20%;
+          bottom: 0; // move down
+
+          & .card-title {
+            position: relative;
+            width: max-content;
+            font-size: 1.5vw;
+            margin-bottom: 1.5vw;
+            color: $gray;
+
+            &::after {
+              content: "";
+              position: absolute;
+              height: 0.2vw;
+              left: calc(var(--padding) * -1);
+              bottom: -0.5vw; // move up
+              width: calc(100% + var(--padding));
+              background: #42F584;
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: transform 500ms ease;
+            }
+          }
+
+          & .card-body {
+            font-size: 1.0vw;
+            color: $gray;
+            word-wrap: break-word;
+          }
+        }
+
+        &:hover {
+          & .music_card-content .card-title::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.skills {
+  // background-color: red;
+  width: 90%;
+  padding: 0;
+  margin-top: 3vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .box-container {
+    // background-color: $gray;
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & .box {
+      // background-color: $white;
+      width: 27vw;
+      margin: 1vw;
+      // min-width: 250px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      min-width: 120px;
+
+      & .image {
+        background-color: cadetblue;
+        width: 100%;
+        height: 15vw;
+        // max-height: 200px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          // max-width: 400px;
+          overflow: hidden;
+          object-fit: cover;
+        }
+      }
+
+      & .content {
+        width: 100%;
+        // max-width: 400px;
+        padding: 0 1vw;
+
+        & h1 {
+          color: $pink;
+          font-size: 2.3vw;
+          padding: 1.0vw 0;
+        }
+
+        & h2 {
+          color: $blue;
+          font-size: 2.0vw;
+        }
+
+        & h3 {
+          color: $gray;
+          font-size: 1.7vw;
+          padding-left: 1vw;
+        }
+
+        & .item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          &:hover {
+            // color: $pink;
+            border-bottom: 0.2vh solid $pink;
+            cursor: pointer;
+          }
+
+          &-head {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 0.2vh solid $blue;
+          }
+
+          &-lang {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &:hover {
+              border-bottom: 0.2vh solid $pink;
+              cursor: pointer;
+            }
+
+            & h2 {
+              color: $gray;
+              font-size: 1.7vw;
+            }
+          }
+        }
+
+        & .stars {
+          & i {
+            font-size: 1.5vw;
+            color: $turquoise;
+          }
+        }
+      }
+    }
+  }
+}

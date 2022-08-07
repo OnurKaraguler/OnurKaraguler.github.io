@@ -1,0 +1,204 @@
+.experience {
+  & .box-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    // grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+
+
+    & .box {
+      width: 100%;
+      height: 30vw;
+      // height: 530px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      background-color: $bg;
+
+      & .images {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+
+        & img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+
+          overflow: hidden;
+          // object-position: 50% 70%;
+          object-fit: cover;
+
+          opacity: 0;
+          // transition-delay: 0.2s;
+          transition-duration: 1s;
+
+          &.active {
+            opacity: 1.0;
+          }
+        }
+
+        // & #kayalar {
+        //   object-position: 50% 10%;
+        // }
+      }
+
+      & .nav {
+        position: absolute;
+        z-index: 888;
+        display: flex;
+        align-items: right;
+        bottom: -3rem;
+
+        & .btn {
+          width: 1.0vw;
+          height: 1.0vw;
+          background: $turquoise;
+          border-radius: 50%;
+          cursor: pointer;
+          box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+          // transition: 0.5s ease;
+
+          &:not(:last-child) {
+            margin-right: 2vw;
+          }
+
+          &.active {
+            background: $orange;
+          }
+
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      & .jobs {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        bottom: 0;
+
+        & .job {
+          height: 2vw;
+          width: 100%;
+          display: none;
+          animation-name: fadeIn;
+          animation-duration: 1s;
+          animation-fill-mode: ease-in;
+          -webkit-animation-name: fadeIn;
+          -webkit-animation-duration: 1s;
+          -webkit-animation-fill-mode: ease-in;
+          // animation: fadeIn 1.5s ease-in;
+
+          & h1 {
+            font-size: 1.8vw;
+            color: yellow;
+          }
+
+          &.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      & .dates {
+        position: absolute;
+        display: flex;
+        bottom: 40rem;
+        right: -22rem;
+        // width: 500px;
+        // bottom: 100px;
+
+        & .date {
+          height: 2vw;
+          width: 100%;
+          padding: 3rem 1rem;
+          display: none;
+          // transform: translateX(1rem);
+          animation-name: fadeIn, slide-left;
+          animation-duration: 1s, 1s;
+          animation-fill-mode: forwards;
+
+          -webkit-animation-name: fadeIn, slide-left;
+          -webkit-animation-duration: 1s, 1s;
+          -webkit-animation-fill-mode: forwards;
+
+          & h1 {
+            font-size: 2.0vw;
+            color: yellow;
+          }
+
+          &.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    & .contents {
+      padding-left: 2vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+
+      & ul {
+        list-style-type: square;
+
+        & h1 {
+          color: $pink;
+          font-size: 2.0vw;
+          padding-bottom: 0.5rem;
+        }
+
+        & li {
+          font-size: 1.5vw;
+          color: $gray;
+        }
+      }
+
+      & .content {
+        display: none;
+
+        // transform: translateX(1rem);
+        // animation-name: fadeIn, slide-right;
+        // animation-duration: 1s, 1s;
+
+        // animation-fill-mode: forwards;
+        // -webkit-animation-name: fadeIn, slide-right;
+        // -webkit-animation-duration: 1s, 1s;
+        // -webkit-animation-fill-mode: forwards;
+
+        &.active {
+          display: inline-block;
+        }
+      }
+    }
+
+    @keyframes slide-left {
+      to {
+        transform: translateX(-23rem);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+}
